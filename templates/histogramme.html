@@ -32,18 +32,19 @@
         // Configurer les options du graphique
         var options = {
           title: 'Évolution des températures à Paris pour les 16 prochains jours',
-          curveType: 'function',
-          legend: { position: 'bottom' },
+          chartArea: { width: '50%' },
           hAxis: {
-            title: 'Jour',
+            title: 'Température (°C)',
+            minValue: 0,
           },
           vAxis: {
-            title: 'Température (°C)',
+            title: 'Jour',
           },
+          legend: { position: 'none' },
         };
 
-        // Dessiner le graphique en ligne
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        // Dessiner le graphique à colonnes
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
